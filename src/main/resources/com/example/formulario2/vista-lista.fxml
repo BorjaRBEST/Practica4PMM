@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.formulario2.ListaController">
+    <Label layoutX="177.0" layoutY="30.0" prefHeight="47.0" prefWidth="233.0" text="Listado Clientes " textAlignment="CENTER">
+        <font>
+            <Font size="32.0" />
+        </font>
+    </Label>
+   <Button fx:id="btBack" layoutX="32.0" layoutY="349.0" mnemonicParsing="false" onAction="#volverFormulario" prefHeight="25.0" prefWidth="114.0" text="Volver Formulario" />
+   <ListView fx:id="lvListaClientes" layoutX="85.0" layoutY="100.0" prefHeight="200.0" prefWidth="430.0" />
+   <Button fx:id="btMostrar" layoutX="243.0" layoutY="324.0" mnemonicParsing="false" onAction="#mostrarLista" prefHeight="25.0" prefWidth="101.0" text="Mostrar Listado" />
+
+
+</AnchorPane>

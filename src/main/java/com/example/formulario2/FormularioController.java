@@ -1,13 +1,19 @@
 package com.example.formulario2;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.time.format.DateTimeFormatter;
 
-public class HelloController {
+public class FormularioController {
 
     @FXML
     private TextField tfNombre;
@@ -21,6 +27,7 @@ public class HelloController {
     private RadioButton rbFemenino;
     @FXML
     private CheckBox cbAceptar;
+
 
     // Método para registrar usuario y mostrar un mensaje de confirmación.
     public void registrarUsuario() {
@@ -72,6 +79,22 @@ public class HelloController {
             alert.setHeaderText(null);
             alert.setContentText("No se pudo guardar en la base de datos.");
             alert.showAndWait();
+        }
+    }
+    // Método que nos manda a la siguiente vista para mostrar la lista de clientes
+    public void mostrarCLientes() {
+        try {
+            // Cargar el archivo FXML para la vista de lista de clientes
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("vista-lista.fxml"));
+            Parent root = loader.load();
+
+            // Obtener el escenario actual y establecer la nueva vista
+            Stage stage = (Stage) tfNombre.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+
         }
     }
 }

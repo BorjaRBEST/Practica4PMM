@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
 
         // Establecer el título de la ventana.
-        stage.setTitle("Formulario");
+        stage.setTitle("Formulario con Conexión a BBDD");
 
         // Establecer la escena en el escenario y mostrar la ventana.
         stage.setScene(scene);
