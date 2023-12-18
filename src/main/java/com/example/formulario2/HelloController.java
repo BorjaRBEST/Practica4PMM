@@ -56,6 +56,14 @@ public class HelloController {
             alert.setContentText("Datos guardados en la base de datos.");
             alert.showAndWait();
 
+            // Limpia los campos del formulario
+            tfNombre.clear();
+            tfApellidos.clear();
+            datePicker.setValue(null); // Establece a null o a una fecha predeterminada
+            rbMasculino.setSelected(false);
+            rbFemenino.setSelected(false);
+            cbAceptar.setSelected(false);
+
         } catch (SQLException e) {
             e.printStackTrace();
             // Mostrar un mensaje de error en caso de fallo
