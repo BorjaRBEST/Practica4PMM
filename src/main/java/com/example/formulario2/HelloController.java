@@ -28,7 +28,7 @@ public class HelloController {
         String nombre = tfNombre.getText();
         String apellidos = tfApellidos.getText();
         String fechaNacimiento = datePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
-        String sexo = rbMasculino.isSelected() ? "Masculino" : "Femenino";
+        String sexo = rbMasculino.isSelected() ? "M" : "F";
         boolean consentimiento = cbAceptar.isSelected();
 
         try {
