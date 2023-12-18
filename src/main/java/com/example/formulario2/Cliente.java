@@ -1,11 +1,11 @@
 package com.example.formulario2;
 
 public class Cliente {
-    private String nombre;
-    private String apellidos;
-    private String fechaNacimiento;
-    private String sexo;
-    private boolean consentimientoNewsletter;
+    final private String nombre;
+    final private String apellidos;
+    final private String fechaNacimiento;
+    final private String sexo;
+    final private boolean consentimientoNewsletter;
 
     // Constructor
     public Cliente(String nombre, String apellidos, String fechaNacimiento, String sexo, boolean consentimientoNewsletter) {
@@ -20,7 +20,7 @@ public class Cliente {
 
     @Override
     public String toString() {
-        return "Nombre: " + nombre + ", Apellidos: " + apellidos + ", Fecha de Nacimiento: " + fechaNacimiento
+        return "\n* Nombre: " + nombre + ", Apellidos: " + apellidos + ", Fecha de Nacimiento: " + fechaNacimiento
                 + ", Sexo: " + sexo + ", Consentimiento Newsletter: " + (consentimientoNewsletter ? "Sí" : "No");
     }
 }

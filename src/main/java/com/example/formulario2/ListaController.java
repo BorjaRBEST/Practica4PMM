@@ -4,9 +4,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -17,13 +17,16 @@ import java.util.List;
 public class ListaController {
 
     @FXML
-    private ListView<String> listViewClientes;
+    private ListView<String> lvListaClientes;
+
 
     @FXML
+    private Button btBack;
+
     public void volverFormulario() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("vista-formulario.fxml"));
-            Stage stage = (Stage) listViewClientes.getScene().getWindow();
+            Stage stage = (Stage) btBack.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } catch (IOException e) {
@@ -32,19 +35,30 @@ public class ListaController {
     }
 
     @FXML
-    public void mostrarLista() {
+    public void mostrarListado() {
         try {
             Connection conn = Conexion.getConnection();
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM Usuarios"); // Ajusta la consulta según tu base de datos
+            ResultSet rs = stmt.executeQuery("SELECT * FROM Usuarios");
 
-            List<String> clientes = new ArrayList<>();
+            List<Cliente> clientes = new ArrayList<>();
             while (rs.next()) {
-                // Suponiendo que quieres mostrar nombre y apellidos
-                clientes.add(rs.getString("Nombre") + " " + rs.getString("Apellidos"));
+                clientes.add(new Cliente(
+                        rs.getString("Nombre"),
+                        rs.getString("Apellidos"),
+                        rs.getString("FechaNacimiento"),
+                        rs.getString("Sexo"),
+                        rs.getBoolean("ConsentimientoNewsletter")
+                ));
             }
 
-            listViewClientes.getItems().setAll(clientes);
+            // Limpia los elementos existentes en la ListView
+            lvListaClientes.getItems().clear();
+
+            // Añade cada cliente a la ListView
+            for (Cliente cliente : clientes) {
+                lvListaClientes.getItems().add(cliente.toString());
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

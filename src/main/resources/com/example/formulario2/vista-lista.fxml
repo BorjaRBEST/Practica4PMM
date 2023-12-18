@@ -12,7 +12,7 @@
     </Label>
    <Button fx:id="btBack" layoutX="32.0" layoutY="349.0" mnemonicParsing="false" onAction="#volverFormulario" prefHeight="25.0" prefWidth="114.0" text="Volver Formulario" />
    <ListView fx:id="lvListaClientes" layoutX="85.0" layoutY="100.0" prefHeight="200.0" prefWidth="430.0" />
-   <Button fx:id="btMostrar" layoutX="243.0" layoutY="324.0" mnemonicParsing="false" onAction="#mostrarLista" prefHeight="25.0" prefWidth="101.0" text="Mostrar Listado" />
+   <Button fx:id="btMostrar" layoutX="243.0" layoutY="324.0" mnemonicParsing="false" onAction="#mostrarListado" prefHeight="25.0" prefWidth="101.0" text="Mostrar Listado" />
 
 
 </AnchorPane>
