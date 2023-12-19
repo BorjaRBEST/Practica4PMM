@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 public class Conexion {
     private static Connection connection = null;
-
+    // Método para poder conectarnos a nuestra BBDD a través de un fichero properties
     public static Connection getConnection() {
         if (connection == null) {
             try {

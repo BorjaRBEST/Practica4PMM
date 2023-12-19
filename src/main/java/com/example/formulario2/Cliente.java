@@ -8,7 +8,8 @@ public class Cliente {
     final private boolean consentimientoNewsletter;
 
     // Constructor
-    public Cliente(String nombre, String apellidos, String fechaNacimiento, String sexo, boolean consentimientoNewsletter) {
+    public Cliente(String nombre, String apellidos, String fechaNacimiento,
+                   String sexo, boolean consentimientoNewsletter) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.fechaNacimiento = fechaNacimiento;

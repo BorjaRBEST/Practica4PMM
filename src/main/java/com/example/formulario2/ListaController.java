@@ -13,6 +13,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class ListaController {
 
@@ -25,7 +26,7 @@ public class ListaController {
 
     public void volverFormulario() {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("vista-formulario.fxml"));
+            Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("vista-formulario.fxml")));
             Stage stage = (Stage) btBack.getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
