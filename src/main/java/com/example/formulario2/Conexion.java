@@ -8,7 +8,7 @@ import java.io.InputStream;
 
 public class Conexion {
     private static Connection connection = null;
-
+    // Método que primero lee el fichero properties y después captura los diferentes campos para iniciar la conexión
     public static Connection getConnection() {
         if (connection == null) {
             try {
